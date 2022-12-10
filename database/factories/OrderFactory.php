@@ -15,14 +15,9 @@ class OrderFactory extends Factory
         return [
             'price' => $this
                 ->faker
-                ->randomFloat(
-                    nbMaxDecimals: 2,
-                    min: 10,
-                    max: 500,
+                ->randomNumber(
+                    nbDigits: 5,
                 ),
-            'status' => $this
-                ->faker
-                ->randomElement(OrderStatusEnum::cases()),
             'user_id' => User::factory(),
         ];
     }
